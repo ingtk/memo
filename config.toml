@@ -1,4 +1,5 @@
 baseURL = 'https://ingtk.github.io/memo/'
+relativeURLs = true
 languageCode = 'ja'
 title = 'memo'
 theme = 'mini'
