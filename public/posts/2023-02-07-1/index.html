@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>compile: version &#34;go1.19&#34; does not match go tool version &#34;go1.19.5&#34; エラーの解決方法 | memo</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="goenv を使って install した go でgo runを実行する表題のエラーがでることがある。
+都度、解決方法を調べているのがもったいないので、メモ。
+# internal/unsafeheader compile: version &#34;go1.19&#34; does not match go tool version &#34;go1.19.5&#34; # internal/goos compile: version &#34;go1.19&#34; does not match go tool version &#34;go1.19.5&#34; # internal/goarch compile: version &#34;go1.19&#34; does not match go tool version &#34;go1.19.5&#34; # unicode compile: version &#34;go1.19&#34; does not match go tool version &#34;go1.19.5&#34; # internal/race compile: version &#34;go1.19&#34; does not match go tool version &#34;go1.19.5&#34; # internal/goexperiment compile: version &#34;go1.">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">compile: version &#34;go1.19&#34; does not match go tool version &#34;go1.19.5&#34; エラーの解決方法</h1>
+
+    <div class="tip">
+        <time datetime="2023-02-07 17:01:18 &#43;0900 JST">Feb 7, 2023</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          86 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1 minute read
+        </span>
+    </div>
+
+    
+    
+
+
+    <div class="content">
+      <p>goenv を使って install した go で<code>go run</code>を実行する表題のエラーがでることがある。</p>
+<p>都度、解決方法を調べているのがもったいないので、メモ。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># internal/unsafeheader</span>
+</span></span><span style="display:flex;"><span>compile: version <span style="color:#e6db74">&#34;go1.19&#34;</span> does not match go tool version <span style="color:#e6db74">&#34;go1.19.5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># internal/goos</span>
+</span></span><span style="display:flex;"><span>compile: version <span style="color:#e6db74">&#34;go1.19&#34;</span> does not match go tool version <span style="color:#e6db74">&#34;go1.19.5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># internal/goarch</span>
+</span></span><span style="display:flex;"><span>compile: version <span style="color:#e6db74">&#34;go1.19&#34;</span> does not match go tool version <span style="color:#e6db74">&#34;go1.19.5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># unicode</span>
+</span></span><span style="display:flex;"><span>compile: version <span style="color:#e6db74">&#34;go1.19&#34;</span> does not match go tool version <span style="color:#e6db74">&#34;go1.19.5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># internal/race</span>
+</span></span><span style="display:flex;"><span>compile: version <span style="color:#e6db74">&#34;go1.19&#34;</span> does not match go tool version <span style="color:#e6db74">&#34;go1.19.5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># internal/goexperiment</span>
+</span></span><span style="display:flex;"><span>compile: version <span style="color:#e6db74">&#34;go1.19&#34;</span> does not match go tool version <span style="color:#e6db74">&#34;go1.19.5&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ... 以下いっぱいでる</span>
+</span></span></code></pre></div><p>このエラーに遭遇した場合は、<code>goenv rehash</code> を実行することで解決する</p>
+
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://ingtk.github.io/memo/tags/go">go</a>
+            
+        </div>
+    
+    
+    
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2023 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>
